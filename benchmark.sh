@@ -4,8 +4,7 @@
 # Collects execution times and system metrics for performance analysis
 
 # Configuration
-DHRYSTONE_ITERATIONS=4
-WHETSTONE_ITERATIONS=2
+ITERATIONS=3
 RESULTS_DIR="benchmark_results_$(date +%Y%m%d_%H%M%S)"
 DHRYSTONE_EXEC="./dhrystone1_64"
 WHETSTONE_EXEC="./whetstone_64"
@@ -15,11 +14,10 @@ mkdir -p "$RESULTS_DIR"
 
 # Run Dhrystone benchmark
 run_dhrystone() {
-    local results_file="$RESULTS_DIR/dhrystone_results.txt"
     local times_file="$RESULTS_DIR/dhrystone_times.txt"
     local sar_file="$RESULTS_DIR/dhrystone_sar.txt"
     
-    echo "Starting Dhrystone benchmark ($DHRYSTONE_ITERATIONS iterations)..."
+    echo "Starting Dhrystone benchmark ($ITERATIONS iterations)..."
     
     # Check executable
     if [[ ! -x "$DHRYSTONE_EXEC" ]]; then
@@ -29,22 +27,17 @@ run_dhrystone() {
     
     # Initialize files
     echo "# Iteration Execution_Time_Milliseconds" > "$times_file"
-    echo "=== DHRYSTONE RESULTS ===" > "$results_file"
-    echo "Start: $(date)" >> "$results_file"
-    echo "" >> "$results_file"
     
     # Start sar monitoring (CPU only, 5 second intervals)
     sar -u 5 > "$sar_file" &
     SAR_PID=$!
     
     # Run iterations
-    for ((i=1; i<=DHRYSTONE_ITERATIONS; i++)); do
-        echo "Running iteration $i/$DHRYSTONE_ITERATIONS"
+    for ((i=1; i<=ITERATIONS; i++)); do
+        echo "Running iteration $i/$ITERATIONS"
         
         start_time=$(date +%s%3N)
-        echo "1000000" | $DHRYSTONE_EXEC 2>&1 | \
-        grep -E "(Dhrystones per Second|VAX.*MIPS rating)" | \
-        sed "s/^/Iteration $i: /" >> "$results_file"
+        echo "1000000" | $DHRYSTONE_EXEC > /dev/null 2>&1
         end_time=$(date +%s%3N)
         
         execution_time=$((end_time - start_time))
@@ -54,17 +47,15 @@ run_dhrystone() {
     # Stop sar
     kill $SAR_PID 2>/dev/null
     
-    echo "End: $(date)" >> "$results_file"
     echo "Dhrystone completed. Results in $RESULTS_DIR/"
 }
 
 # Run Whetstone benchmark
 run_whetstone() {
-    local results_file="$RESULTS_DIR/whetstone_results.txt"
     local times_file="$RESULTS_DIR/whetstone_times.txt"
     local sar_file="$RESULTS_DIR/whetstone_sar.txt"
     
-    echo "Starting Whetstone benchmark ($WHETSTONE_ITERATIONS iterations)..."
+    echo "Starting Whetstone benchmark ($ITERATIONS iterations)..."
     
     # Check executable
     if [[ ! -x "$WHETSTONE_EXEC" ]]; then
@@ -74,20 +65,17 @@ run_whetstone() {
     
     # Initialize files
     echo "# Iteration Execution_Time_Milliseconds" > "$times_file"
-    echo "=== WHETSTONE RESULTS ===" > "$results_file"
-    echo "Start: $(date)" >> "$results_file"
-    echo "" >> "$results_file"
     
     # Start sar monitoring (CPU only, 5 second intervals)
     sar -u 5 > "$sar_file" &
     SAR_PID=$!
     
     # Run iterations
-    for ((i=1; i<=WHETSTONE_ITERATIONS; i++)); do
-        echo "Running iteration $i/$WHETSTONE_ITERATIONS"
+    for ((i=1; i<=ITERATIONS; i++)); do
+        echo "Running iteration $i/$ITERATIONS"
         
         start_time=$(date +%s%3N)
-        echo "" | $WHETSTONE_EXEC >> "$results_file" 2>&1
+        echo "" | $WHETSTONE_EXEC > /dev/null 2>&1
         end_time=$(date +%s%3N)
         
         execution_time=$((end_time - start_time))
@@ -97,7 +85,6 @@ run_whetstone() {
     # Stop sar
     kill $SAR_PID 2>/dev/null
     
-    echo "End: $(date)" >> "$results_file"
     echo "Whetstone completed. Results in $RESULTS_DIR/"
 }
 
@@ -122,8 +109,8 @@ echo "Files created:"
 echo "  Dhrystone:"
 echo "    - $RESULTS_DIR/dhrystone_times.txt (execution times)"
 echo "    - $RESULTS_DIR/dhrystone_sar.txt (CPU metrics)"
-echo "    - $RESULTS_DIR/dhrystone_results.txt (benchmark output)"
+#    echo "    - $RESULTS_DIR/dhrystone_results.txt (benchmark output)"
 echo "  Whetstone:"
 echo "    - $RESULTS_DIR/whetstone_times.txt (execution times)"
 echo "    - $RESULTS_DIR/whetstone_sar.txt (CPU metrics)"
-echo "    - $RESULTS_DIR/whetstone_results.txt (benchmark output)"
+#    echo "    - $RESULTS_DIR/whetstone_results.txt (benchmark output)"
