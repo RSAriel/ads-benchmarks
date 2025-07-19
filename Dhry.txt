@@ -12,9 +12,9 @@
 
  #####################################################
 
- Dhrystone Benchmark  1.1 Opt 3 64 Bit via C/C++ Sat Jul 19 16:13:23 2025
+ Dhrystone Benchmark  1.1 Opt 3 64 Bit via C/C++ Sat Jul 19 16:40:50 2025
 
- VAX MIPS rating:          47639.30
+ VAX MIPS rating:          42712.10
 
  Correct result
 
@@ -32,9 +32,49 @@
 
  #####################################################
 
- Dhrystone Benchmark  1.1 Opt 3 64 Bit via C/C++ Sat Jul 19 16:13:29 2025
+ Dhrystone Benchmark  1.1 Opt 3 64 Bit via C/C++ Sat Jul 19 16:41:00 2025
 
- VAX MIPS rating:          42698.50
+ VAX MIPS rating:          47461.75
+
+ Correct result
+
+ #####################################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00A50F00 
+  AMD Ryzen 5 5600GT with Radeon Graphics         
+  Measured - Minimum 3600 MHz, Maximum 3600 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 12, Configured CPUs 12 
+  get_phys_pages() and size - RAM Size 14.91 GB, Page Size 4096 Bytes 
+  uname() - Linux, ceres, 6.15.6-2-cachyos 
+  #1 SMP PREEMPT_DYNAMIC Fri, 11 Jul 2025 06:37:59 +0000, x86_64 
+
+ #####################################################
+
+ Dhrystone Benchmark  1.1 Opt 3 64 Bit via C/C++ Sat Jul 19 16:41:05 2025
+
+ VAX MIPS rating:          42990.69
+
+ Correct result
+
+ #####################################################
+
+  Assembler CPUID and RDTSC       
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00A50F00 
+  AMD Ryzen 5 5600GT with Radeon Graphics         
+  Measured - Minimum 3600 MHz, Maximum 3600 MHz 
+  Linux Functions 
+  get_nprocs() - CPUs 12, Configured CPUs 12 
+  get_phys_pages() and size - RAM Size 14.91 GB, Page Size 4096 Bytes 
+  uname() - Linux, ceres, 6.15.6-2-cachyos 
+  #1 SMP PREEMPT_DYNAMIC Fri, 11 Jul 2025 06:37:59 +0000, x86_64 
+
+ #####################################################
+
+ Dhrystone Benchmark  1.1 Opt 3 64 Bit via C/C++ Sat Jul 19 16:41:11 2025
+
+ VAX MIPS rating:          42552.27
 
  Correct result
 

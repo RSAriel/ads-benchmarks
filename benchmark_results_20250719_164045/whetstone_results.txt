@@ -1,0 +1,98 @@
+=== WHETSTONE RESULTS ===
+Start: sáb 19 jul 2025 16:41:11 -03
+
+  ####################################################
+  getDetails and MHz
+
+  Assembler CPUID and RDTSC      
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00A50F00
+  AMD Ryzen 5 5600GT with Radeon Graphics        
+  Measured - Minimum 3600 MHz, Maximum 3600 MHz
+  Linux Functions
+  get_nprocs() - CPUs 12, Configured CPUs 12
+  get_phys_pages() and size - RAM Size 14.91 GB, Page Size 4096 Bytes
+  uname() - Linux, ceres, 6.15.6-2-cachyos
+  #1 SMP PREEMPT_DYNAMIC Fri, 11 Jul 2025 06:37:59 +0000, x86_64
+
+##########################################
+Single Precision C Whetstone Benchmark Opt 3 64 Bit, Sat Jul 19 16:41:14 2025
+
+Calibrate
+       0.00 Seconds          1   Passes (x 100)
+       0.01 Seconds          5   Passes (x 100)
+       0.03 Seconds         25   Passes (x 100)
+       0.14 Seconds        125   Passes (x 100)
+       0.68 Seconds        625   Passes (x 100)
+       3.38 Seconds       3125   Passes (x 100)
+
+Use 9251  passes (x 100)
+
+          Single Precision C/C++ Whetstone Benchmark
+
+Loop content                  Result              MFLOPS      MOPS   Seconds
+
+N1 floating point     -1.12475013732910156      1900.897              0.093
+N2 floating point     -1.12274742126464844      1901.041              0.654
+N3 if then else        1.00000000000000000               13842.109    0.069
+N4 fixed point        12.00000000000000000                7718.703    0.378
+N5 sin,cos etc.        0.49911010265350342                 336.455    2.288
+N6 floating point      0.99999982118606567      1544.004              3.232
+N7 assignments         3.00000000000000000                1731.909    0.987
+N8 exp,sqrt etc.       0.75110864639282227                 149.880    2.296
+
+MWIPS                                           9253.917              9.997
+
+
+A new results file, whets.txt,  will have been created in the same
+directory as the .EXE files, if one did not already exist.
+
+ Press Enter
+
+  ####################################################
+  getDetails and MHz
+
+  Assembler CPUID and RDTSC      
+  CPU AuthenticAMD, Features Code 178BFBFF, Model Code 00A50F00
+  AMD Ryzen 5 5600GT with Radeon Graphics        
+  Measured - Minimum 3600 MHz, Maximum 3600 MHz
+  Linux Functions
+  get_nprocs() - CPUs 12, Configured CPUs 12
+  get_phys_pages() and size - RAM Size 14.91 GB, Page Size 4096 Bytes
+  uname() - Linux, ceres, 6.15.6-2-cachyos
+  #1 SMP PREEMPT_DYNAMIC Fri, 11 Jul 2025 06:37:59 +0000, x86_64
+
+##########################################
+Single Precision C Whetstone Benchmark Opt 3 64 Bit, Sat Jul 19 16:41:32 2025
+
+Calibrate
+       0.00 Seconds          1   Passes (x 100)
+       0.01 Seconds          5   Passes (x 100)
+       0.03 Seconds         25   Passes (x 100)
+       0.13 Seconds        125   Passes (x 100)
+       0.67 Seconds        625   Passes (x 100)
+       3.38 Seconds       3125   Passes (x 100)
+
+Use 9257  passes (x 100)
+
+          Single Precision C/C++ Whetstone Benchmark
+
+Loop content                  Result              MFLOPS      MOPS   Seconds
+
+N1 floating point     -1.12475013732910156      1901.124              0.093
+N2 floating point     -1.12274742126464844      1897.945              0.656
+N3 if then else        1.00000000000000000               13771.155    0.070
+N4 fixed point        12.00000000000000000                7711.224    0.378
+N5 sin,cos etc.        0.49911010265350342                 335.922    2.293
+N6 floating point      0.99999982118606567      1542.096              3.238
+N7 assignments         3.00000000000000000                1731.577    0.988
+N8 exp,sqrt etc.       0.75110864639282227                 149.790    2.299
+
+MWIPS                                           9243.769             10.014
+
+
+A new results file, whets.txt,  will have been created in the same
+directory as the .EXE files, if one did not already exist.
+
+ Press Enter
+
+End: sáb 19 jul 2025 16:41:48 -03

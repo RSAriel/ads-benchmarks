@@ -1,7 +1,0 @@
-=== DHRYSTONE RESULTS ===
-Start: sáb 19 jul 2025 16:13:14 -03
-
-Iteration 1: Dhrystones per Second:                        83702244 
-Iteration 1: VAX  MIPS rating =                              47639.30 
-Iteration 2: Dhrystones per Second:                        75021259 
-Iteration 2: VAX  MIPS rating =                              42698.50 
