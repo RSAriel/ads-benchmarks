@@ -1,4 +1,0 @@
-# Iteration Execution_Time_Milliseconds
-1 18502
-2 18509
-3 18446
